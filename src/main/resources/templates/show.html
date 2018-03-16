@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Bullhorn</title>
+</head>
+<body>
+<a href="/">Show All message</a><br />
+Message ID: <span th:text="${message.id}"></span><br/>
+Message Content: <span th:text="${message.content}"></span><br/>
+Message Posted Date: <span th:text="${message.postedDate}"></span><br/>
+Message Sender: <span th:text="${message.sentby}"></span><br/>
+<br/>
+<a href="/add">Send a your message</a>
+</body>
+</html>

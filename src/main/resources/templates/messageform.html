@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bullhorn</title>
+</head>
+<body>
+<form action="#" th:action="@{/process}"
+      th:object="${message}" method="post" enctype="multipart/form-data">
+    <input type="hidden" th:field="*{id}" />
+
+    Message Content: <textarea rows="3" th:field="*{content}" />
+    <span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></span><br />
+
+    Message Post Date : <input type="date" th:field="*{postedDate}" />
+    <span th:if="${#fields.hasErrors('postedDate')}" th:errors="*{postedDate}"></span><br />
+
+    Message Sent By: <input type="text" th:field="*{sentby}" />
+    <span th:if="${#fields.hasErrors('sentby')}" th:errors="*{sentby}"></span><br />
+
+    <input type="file" name="file" /><br /><br />
+
+    <br/>
+
+    <input type="submit" value="Submit" />
+
+</form>
+</body>
+</html>
